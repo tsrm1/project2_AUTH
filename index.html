@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/styles/style.css" />
+  </head>
+  <body>
+    <form id="registerForm">
+      <input type="text" name="name" placeholder="Name" />
+      <ul class="alertText hidden" id="name_alert"></ul>
+
+      <input type="text" name="email" placeholder="Email" />
+      <ul class="alertText hidden" id="email_alert"></ul>
+
+      <input type="text" name="phone" placeholder="Telephone" />
+      <ul class="alertText hidden" id="phone_alert"></ul>
+
+      <input type="text" name="password" placeholder="Password" />
+      <ul class="alertText hidden" id="pass_alert"></ul>
+
+      <input type="submit" value="Sign up" />
+      <p class="infoText hidden" id="signup_info"></p>
+    </form>
+    <br /><br /><br /><br />
+    <!-- ****************************************************************************** -->
+    <form id="validationForm">
+      <input type="text" name="email" placeholder="Email" />
+
+      <input type="text" name="password" placeholder="Password" />
+
+      <input type="submit" value="Log in" />
+      <p class="infoText hidden" id="log_in_info"></p>
+    </form>
+  </body>
+  <script src="/scripts/user_register.js"></script>
+  <script src="/scripts/user_validation.js"></script>
+</html>
