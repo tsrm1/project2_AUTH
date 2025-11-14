@@ -60,41 +60,22 @@ document.addEventListener("DOMContentLoaded", (event) => {
   if (fileName === "login.html") navLoginLink.style.color = "yellow";
 });
 // ************************************************************************************************
-const validationForm = document.querySelector("#validationForm");
-const logInInfo = document.querySelector("#log_in_info");
 
-validationForm.addEventListener("submit", (event) => {
-  event.preventDefault();
+// const profileForm = document.querySelector("#profileForm");
+const profileName = document.querySelector("#name");
+const profileEmail = document.querySelector("#email");
+const profilePhone = document.querySelector("#phone");
+const profilePass = document.querySelector("#pass");
+const profileChangeBtn = document.querySelector("#changeBtn");
 
-  const email = event.target.elements["email"].value;
-  const pass = event.target.elements["password"].value;
-
-  console.log(email);
-  console.log(pass);
-  console.log(users);
-
-  let isLoginAndPassValid = users.some((user) => {
-    console.log(user.email, user.password);
-    return user.email === email && user.password === pass;
-  });
-
-  console.log(`Email & Password ${isLoginAndPassValid ? "valid" : "invalid"}`);
-  validationForm.reset();
-  if (isLoginAndPassValid) {
-    logInInfo.textContent = "Log in OK.";
-    logInInfo.classList.remove("hidden");
-
-    const authToken = {
-      authToken: getUserByEmail(email, users).token,
-    };
-
-    localStorage.setItem("authToken", JSON.stringify(authToken));
-
-    setTimeout(() => {
-      location.pathname = "/";
-    }, 2000);
-  } else {
-    logInInfo.textContent = "Wrong Email&Password!";
-    logInInfo.classList.remove("hidden");
+document.addEventListener("DOMContentLoaded", (event) => {
+  console.log(authToken.authToken);
+  if (authToken.authToken) {
+    let user = getUserByauthToken(authToken.authToken, users);
+    console.log(user);
+    profileName.value = user.name ? user.name : "";
+    profileEmail.value = user.email ? user.email : "";
+    profilePhone.value = user.phone ? user.phone : "";
+    profilePass.value = user.password ? user.password : "";
   }
 });

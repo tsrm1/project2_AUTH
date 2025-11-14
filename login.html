@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Page</title>
+    <link rel="stylesheet" href="/styles/style.css" />
+  </head>
+  <body>
+    <nav>
+      <a href="/" class="nav-home">Home</a>
+      <a href="/register.html" class="nav-register">Register</a>
+      <a href="/login.html" class="nav-login">Login</a>
+      <a href="/login.html" class="nav-logout">Logout</a>
+      <a href="/profile.html" class="nav-user"></a>
+    </nav>
+    <main class="main-login">
+      <form id="validationForm">
+        <h1>Login user</h1>
+        <input type="text" name="email" placeholder="Email" />
+
+        <input type="text" name="password" placeholder="Password" />
+
+        <input type="submit" value="Log in" />
+        <p class="infoText hidden" id="log_in_info"></p>
+      </form>
+    </main>
+  </body>
+  <!-- <script src="/scripts/user_register.js"></script> -->
+  <script src="/scripts/user_validation.js"></script>
+</html>
